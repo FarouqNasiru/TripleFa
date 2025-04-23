@@ -277,3 +277,102 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
+
+
+   // Door database with all features
+   const doorDatabase = {
+    'classic-wood-entry': {
+        name: 'Classic Wood Entry Door',
+        features: {
+            material: 'Solid Mahogany',
+            width: '36 inches',
+            height: '80 inches',
+            thickness: '1.75 inches',
+            finish: 'Stain (Color Options Available)',
+            glass: 'None',
+            hardware: 'Oil-Rubbed Bronze',
+            security: 'Standard Deadbolt',
+            insulation: 'Weatherstripped',
+            price: '$1,299'
+        }
+    },
+    'modern-steel-security': {
+        name: 'Modern Steel Security Door',
+        features: {
+            material: 'Reinforced Steel Core',
+            width: '36 inches',
+            height: '80 inches',
+            thickness: '2 inches',
+            finish: 'Powder-Coated (Multiple Colors)',
+            glass: 'Tempered Glass Panel (Optional)',
+            hardware: 'Multi-point Locking System',
+            security: 'Grade 1 Security Rating',
+            insulation: 'Polyurethane Foam Core',
+            price: '$1,899'
+        }
+    },
+    'french-patio': {
+        name: 'French Patio Doors',
+        features: {
+            material: 'Wood Composite',
+            width: '60 inches (Pair)',
+            height: '80 inches',
+            thickness: '1.75 inches',
+            finish: 'Paint-Ready Primed',
+            glass: 'Double-Pane Tempered',
+            hardware: 'Brass Mortise Lockset',
+            security: 'Keyed Alike Option',
+            insulation: 'Low-E Glass',
+            price: '$2,499'
+        }
+    },
+    'sliding-glass': {
+        name: 'Sliding Glass Door',
+        features: {
+            material: 'Aluminum Frame',
+            width: '72 inches',
+            height: '80 inches',
+            thickness: '2.25 inches',
+            finish: 'Anodized or Painted',
+            glass: 'Low-E Double Pane',
+            hardware: 'Smooth Gliding Rollers',
+            security: 'Integrated Lock',
+            insulation: 'Thermal Break Technology',
+            price: '$1,799'
+        }
+    },
+    'rustic-barn': {
+        name: 'Rustic Barn Door',
+        features: {
+            material: 'Reclaimed Pine',
+            width: 'Custom (36-48 inches typical)',
+            height: 'Custom (80-96 inches typical)',
+            thickness: '1.5 inches',
+            finish: 'Weathered Look',
+            glass: 'None (Optional Iron Accents)',
+            hardware: 'Black Steel Track System',
+            security: 'Not for External Use',
+            insulation: 'None',
+            price: '$1,599'
+        }
+    }
+};
+
+// Navigation function
+function navigateToDetail(doorId) {
+    // In a real implementation, you would redirect to a detail page with the doorId as a parameter
+    // For this example, we'll show the details in an alert
+    const door = doorDatabase[doorId];
+    
+    let featuresText = '';
+    for (const [key, value] of Object.entries(door.features)) {
+        featuresText += `${key}: ${value}\n`;
+    }
+    
+    alert(`Redirecting to ${door.name} details page with these features pre-selected:\n\n${featuresText}`);
+    
+    // In a real implementation, you would use:
+    // window.location.href = `door-details.html?door=${doorId}`;
+    // or store in sessionStorage/localStorage
+    // sessionStorage.setItem('selectedDoor', JSON.stringify(door));
+}
